@@ -17,7 +17,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
-#Prints all characters to Python
+#Prints all characters to Python console
 
 # def mongo_connect(url):
 #     try:
@@ -44,7 +44,7 @@ Returns all characters to Flask app
 @app.route('/')
 @app.route('/get_all_characters')
 def hello():
-    return render_template('all_characters.html', character=mongo.db.character.find())
+    return render_template('all_characters.html', character=mongo.db.character.find().sort('name'))
     
     
 

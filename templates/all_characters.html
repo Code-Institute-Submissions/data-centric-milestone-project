@@ -2,12 +2,14 @@
 {% block content %}
 <h1>All Characters</h1>
     {% for character in character %}
-        {{ character.name }}
-        {{ character.description }}
-        {{ character.region_name }}
-        {{ character.house_name }}
-        {{ character.episodes }}
-        {{ character.deceased }}
+
+     <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header">{{ character.name }}</div>
+            <div class="collapsible-body"><span>{{ character.description }}<br>{{ character.region_name }}<br>{{ character.house_name }}<br>{{ character.episodes }}<br>{{ character.deceased }}</span></div>
+        </li>
+    </ul>    
+    
     {% endfor %}
     
 {% endblock %}

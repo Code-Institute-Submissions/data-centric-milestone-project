@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Add a Character</h1>
+
+<div class="row">
+    <form action="{{ url_for('insert_character') }}" method='POST' class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="name" type="text" class="validate">
+                <label for="icon_prefix">Character's Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="house_name" name="house_name" class="icons">
+                  <option value="" disabled selected>Region Name</option>
+                  {% for region in region_name %}
+                      <option value="{{region.region_name}}" data-icon="">{{region.region_name}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="house_name" name="house_name" class="icons">
+                  <option value="" disabled selected>House Name</option>
+                  {% for house in house_name %}
+                      <option value="{{house.house_name}}" data-icon="">{{house.house_name}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="episodes" name="episodes" type="text" class="validate">
+                <label for="icon_telephone">Episode Count</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="deceased" name="deceased" type="text" class="validate">
+                <label for="icon_telephone">Deceased</label>
+            </div>
+        </div>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Image of Character</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="material-icons right">Add Character</i>
+          </button>
+    </form>
+</div>
+
+{% endblock %}

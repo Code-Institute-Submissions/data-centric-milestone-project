@@ -43,8 +43,29 @@ Returns all characters to Flask app
 
 @app.route('/')
 @app.route('/get_all_characters')
-def hello():
+def get_all_characters():
     return render_template('all_characters.html', character=mongo.db.character.find().sort('name'))
+    
+    
+"""
+Function for adding a character to the database, returns user to get_all_characters function page
+"""
+@app.route('/add_character')
+def add_character():
+    return render_template('add_character.html',
+                            house_name=mongo.db.house.find(),
+                            region_name=mongo.db.region.find())
+    
+    
+@app.route('/insert_character', methods=["POST"])
+def insert_character():
+    character = mongo.db.character
+    character.insert_one(request.form.to_dict())
+    return redirect(url_for('get_all_characters'))
+
+
+    
+
     
     
 

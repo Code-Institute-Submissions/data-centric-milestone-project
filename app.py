@@ -90,8 +90,18 @@ def update_character(character_id):
     return redirect(url_for('get_all_characters'))
     
     
-
     
+"""
+Function for deleting an entire character's info/entry and returning to all_characters page
+"""
+
+@app.route('/delete_character/<character_id>')
+def delete_character(character_id):
+    mongo.db.character.remove({'_id': ObjectId(character_id)})
+    return redirect(url_for('get_all_characters'))
+    
+
+
 
 
 if __name__ == '__main__':

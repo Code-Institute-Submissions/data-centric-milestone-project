@@ -38,7 +38,7 @@ mongo = PyMongo(app)
 
 
 """
-Returns all characters to Flask app
+Returns all characters to Flask app/Displays all of the characters in the DB
 """
 
 @app.route('/')
@@ -48,7 +48,7 @@ def get_all_characters():
     
     
 """
-Function for adding a character to the database, returns user to get_all_characters function page
+Function for adding a character to the database, then returns user to get_all_characters function page
 """
 @app.route('/add_character')
 def add_character():
@@ -64,8 +64,30 @@ def insert_character():
     return redirect(url_for('get_all_characters'))
 
 
+"""
+Edits character info, then returns user to get_all_characters function page
+"""
     
-
+@app.route('/edit_character/<character_id>')
+def edit_character(character_id):
+    character = mongo.db.character.find_one({"_id": ObjectId(character_id)})
+    return render_template('edit_character.html', character=character,
+                            house_name=mongo.db.house.find(), 
+                            region_name=mongo.db.region.find())
+                            
+@app.route('/update_character/<character_id>', methods=["POST"])
+def update_character(character_id):
+    character = mongo.db.character
+    character.update({'_id': ObjectId(character_id)},
+    {
+        'name':request.form.get('name'),
+        'description':request.form.get('description'),
+        'region_name':request.form.get('region_name'),
+        'house_name':request.form.get('house_name'),
+        'episodes':request.form.get('episodes'),
+        'deceased':request.form.get('deceased')
+    })
+    return redirect(url_for('get_all_characters'))
     
     
 

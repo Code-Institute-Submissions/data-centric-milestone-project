@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Edit a Character</h1>
+
+<div class="row">
+    <form action="{{ url_for('update_character', character_id=character._id) }}" method='POST' class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="name" type="text" class="validate" value="{{character.name}}">
+                <label for="icon_prefix">Character's Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea">{{character.description}}</textarea>
+                <label for="icon_telephone">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="region_name" name="region_name" class="icons">
+                  <option value="" disabled selected>Region Name</option>
+                  {% for region in region_name %}
+                      {% if region.region_name == character.region_name %}
+                          <option value="{{region.region_name}}" selected >{{region.region_name}}</option>
+                      {% else %}
+                          <option value="{{region.region_name}}" >{{region.region_name}}</option>
+                      {% endif %}
+                  {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="house_name" name="house_name" class="icons">
+                  <option value="" disabled selected>House Name</option>
+                    {% for house in house_name %}
+                        {% if house.house_name == character.house_name %}
+                            <option value="{{house.house_name}}" selected >{{house.house_name}}</option>
+                        {% else %}
+                            <option value="{{house.house_name}}" >{{house.house_name}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="episodes" name="episodes" type="text" class="validate" value="{{character.episodes}}">
+                <label for="icon_telephone">Episode Count</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="deceased" name="deceased" type="text" class="validate" value="{{character.deceased}}">
+                <label for="icon_telephone">Deceased</label>
+            </div>
+        </div>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Image of Character</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            <i class="material-icons right">Confirm Changes</i>
+          </button>
+    </form>
+</div>
+
+{% endblock %}

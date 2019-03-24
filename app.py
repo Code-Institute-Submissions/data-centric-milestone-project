@@ -38,10 +38,17 @@ mongo = PyMongo(app)
 
 
 """
+Displays home page of the web app
+"""
+@app.route('/')
+def home_page():
+    return render_template('home_page.html')
+
+
+"""
 Returns all characters to Flask app/Displays all of the characters in the DB
 """
 
-@app.route('/')
 @app.route('/get_all_characters')
 def get_all_characters():
     return render_template('all_characters.html', character=mongo.db.character.find().sort('name'))

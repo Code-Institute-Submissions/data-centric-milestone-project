@@ -134,7 +134,17 @@ def edit_house(house_id):
     return render_template('edit_house.html',
                             house=mongo.db.house.find_one({'_id': ObjectId(house_id)}))
 
-
+@app.route('/update_house/<house_id>', methods=['POST'])
+def update_house(house_id):
+    mongo.db.house.update(
+        {'_id':ObjectId(house_id)},
+        {'house_name': request.form.get('house_name')})
+    return redirect(url_for('get_houses'))
+    
+@app.route('/delete_house/<house_id>')
+def delete_house(house_id):
+    mongo.db.house.remove({'_id':ObjectId(house_id)})
+    return redirect(url_for('get_houses'))
 
 
 

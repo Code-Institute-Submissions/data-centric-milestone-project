@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 """
-Connects to database
+Connects to database in Mongo DB Atlas
 """
 
 app.config["MONGODB_NAME"] = 'game_of_thrones_characters'
@@ -38,11 +38,15 @@ mongo = PyMongo(app)
 
 
 """
-Displays home page of the web app
+Displays home/main page of the web app
 """
 @app.route('/')
 def home_page():
     return render_template('home_page.html')
+
+
+
+"""ALL BELOW FUNCTIONS RELATING TO CHARACTERS"""
 
 
 """
@@ -107,6 +111,33 @@ def delete_character(character_id):
     mongo.db.character.remove({'_id': ObjectId(character_id)})
     return redirect(url_for('get_all_characters'))
     
+
+
+
+"""ALL FUNCTIONS BELOW RELATING TO HOUSES"""
+
+
+"""
+Function for retrieving and displaying all Houses
+"""
+@app.route('/get_houses')
+def get_houses():
+    return render_template('houses.html',
+                            house=mongo.db.house.find())
+
+
+"""
+Function for editing a House
+"""
+@app.route('/edit_house/<house_id>')
+def edit_house(house_id):
+    return render_template('edit_house.html',
+                            house=mongo.db.house.find_one({'_id': ObjectId(house_id)}))
+
+
+
+
+
 
 
 

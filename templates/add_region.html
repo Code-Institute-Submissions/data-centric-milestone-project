@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Add Region</h1>
+
+<div class="row">
+    <form action="{{ url_for('insert_region') }}" method='POST' class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="region_name" name="region_name" type="text" class="validate">
+                <label for="icon_prefix">Region</label>
+            </div>
+            <div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    <i class="material-icons right">Confirm Changes</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}

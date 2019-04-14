@@ -37,6 +37,49 @@ def home_page():
 
 
 
+"""
+All .HTML pages for Regions
+"""
+@app.route('/north')
+def north():
+    return render_template('regions_pages/north.html')
+
+@app.route('/vale')
+def vale():
+    return render_template('regions_pages/vale.html')
+
+@app.route('/riverlands')
+def riverlands():
+    return render_template('regions_pages/riverlands.html')
+
+@app.route('/westerlands')
+def westerlands():
+    return render_template('regions_pages/westerlands.html')
+
+@app.route('/iron_islands')
+def iron_islands():
+    return render_template('regions_pages/iron_islands.html')
+
+@app.route('/crownlands')
+def crownlands():
+    return render_template('regions_pages/crownlands.html')
+
+@app.route('/dorne')
+def dorne():
+    return render_template('regions_pages/dorne.html')
+
+@app.route('/reach')
+def reach():
+    return render_template('regions_pages/reach.html')
+
+@app.route('/stormlands')
+def stormlands():
+    return render_template('regions_pages/stormlands.html')
+                            
+
+
+
+
 """ALL BELOW FUNCTIONS RELATING TO CHARACTERS"""
 
 

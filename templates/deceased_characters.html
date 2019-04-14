@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Deceased Characters (up to Season 7)</h2>
+
+<ul class="collapsible" data-collapsible="accordion">
+    {% for boolean in deceased %}
+    <li>
+        <div class="collapsible-body">{{boolean.true}}</div>
+        <div class="collapsible-body">{{boolean.false}}</div>
+    </li>
+    {% endfor %}
+</ul>
+
+<div>
+    <a href="{{ url_for('home_page') }}" class="waves-effect waves-light">Home Page</a>
+</div>
+
+
+{% endblock %}

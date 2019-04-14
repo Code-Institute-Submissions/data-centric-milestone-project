@@ -12,8 +12,8 @@ class FlaskrTestCase(unittest.TestCase):
         
     def test_first(self):
         result = self.app.get('/get_all_characters')
-    #add assert    
-        print(result.data)
+    #add assert to get x1 character   
+        print(get_one_character.data)
 
 
 if __name__ == '__main__':

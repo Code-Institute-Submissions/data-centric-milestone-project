@@ -1,12 +1,196 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Game of Thrones Characters</h3>
-<h4>HBO's television adaption of George RR Martin's book series 'A Song of Ice and Fire'</h4>
 
 <div><a href="{{ url_for('get_all_characters') }}">All Characters</a></div>
 
 <div><a href="{{ url_for('get_houses') }}">Houses</a></div>
 
-<div><a href="{{ url_for('get_regions') }}">Regions</a></div>
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header">
+                <h4>Regions</h4>
+            </div>
+
+            <div class="collapsible-body">The North
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_north %}
+                        <div class="collapsible-body">
+                            {% for house in region.north_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Riverlands
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_riverlands %}
+                        <div class="collapsible-body">
+                            <ul class="collapsible container">
+                                <li>
+                                    {% for house in region.riverland_house %}
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    {% endfor %}
+
+                                    <div class="collapsible-body">
+                                        {% for house in region.riverland_house %}
+                                        <p>{{ house }}</p>
+                                        {% endfor %}
+                                    </div>
+
+
+
+                                </li>
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body"><a href="#">The Vale</a>
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_vale %}
+                        <div class="collapsible-body">
+                            {% for house in region.the_vale_house %}
+                            <ul class="collapsible container">
+                                <li>
+                                    
+                                    
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    
+                                    
+                                    <div class="collapsible-body">
+                                        <p>Characters</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Stormlands
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_stormlands %}
+                        <div class="collapsible-body">
+                            {% for house in region.stormlands_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Iron Islands
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_iron_islands %}
+                        <div class="collapsible-body">
+                            {% for house in region.iron_island_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Crownlands
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_crownlands %}
+                        <div class="collapsible-body">
+                            {% for house in region.crownlands_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Reach
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_reach %}
+                        <div class="collapsible-body">
+                            {% for house in region.reach_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">Dorne
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in dorne %}
+                        <div class="collapsible-body">
+                            {% for house in region.dorne_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapsible-body">The Westerlands
+                <ul class="collapsible container">
+                    <li>
+                        <div class="collapsible-header">Houses</div>
+                        {% for region in the_westerlands %}
+                        <div class="collapsible-body">
+                            {% for house in region.westerlands_house %}
+                            <p>{{ house }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+
+        </li>
+    </ul>
+</div>
+</div>
+
+<ul class="collapsible" data-collapsible="accordion">
+    <!--<div class="row">-->
+    <!--    <div class="col s6 offset-s3">-->
+    <li>
+        <div class="collapsible-header">
+            <h5>Deceased Characters (up to season 7) *Spoilers</h5>
+        </div>
+        <div class="collapsible-body"><a href="{{ url_for('deceased_characters') }}">Dead</a></div>
+        <div class="collapsible-body"><a href="{{ url_for('alive_characters') }}">Alive</a></div>
+    </li>
+    <!--</div>-->
+    <!--</div>-->
+</ul>
+
+<div><a href="{{ url_for('alive_characters') }}">Characters still alive (Up to Season 7)</a></div>
 
 
 {% endblock %}

@@ -1,19 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Regions</h2>
+<h3>Regions</h3>
 
 <ul class="collapsible" data-collapsible="accordion">
-    {% for region in region %}
+{% for region in region %}
     <li>
-        <div class="collapsible-header">{{region.region_name}}</div>
-            <div>
-                <a href="{{url_for('edit_region', region_id=region._id)}}" class="waves-effect waves-light btn-small">Edit Region Info</a>
-            </div>
-            <div>
-                <a href="{{url_for('delete_region', region_id=region._id)}}" class="waves-effect waves-light">Delete Region Name and Data</a>
+        <div class="collapsible-header"><h4>{{region.region_name}}</h4></div>
+            <div class="collapsible-body"><span>{% for house in region.house_name %}
+                    <p><a href="#">{{ house }}</a></p>
+                        {% endfor %}
+                </span>
             </div>
     </li>
-    {% endfor %}
+{% endfor %}
 </ul>
+
+
+
 <div>
     <a href="{{url_for('add_region')}}" class="waves-effect waves-light">Add Region</a>
 </div>

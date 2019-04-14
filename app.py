@@ -1,8 +1,8 @@
-import pymongo
 import os
 from flask import Flask, redirect, request, url_for, render_template
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+
 
 app = Flask(__name__)
 
@@ -17,32 +17,23 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
-#Prints all characters to Python console
-
-# def mongo_connect(url):
-#     try:
-#         conn = pymongo.MongoClient(url)
-#         print('Mongo is connected')
-#         return conn
-#     except pymongo.errors.ConnectionFailure as e:
-#         print('Could not connect to MongoDB: %s') % e
-        
-# conn = mongo_connect(MONGODB_URI)
-
-# coll = conn[DBS_NAME][COLLECTION_NAME]
-
-# documents = coll.find()
-
-# for doc in documents:
-#     print(doc)
-
-
 """
 Displays home/main page of the web app
 """
 @app.route('/')
 def home_page():
-    return render_template('home_page.html')
+    return render_template('home_page.html',
+                            the_north=mongo.db.region.find({'region_name':'The North'}),
+                            the_riverlands=mongo.db.region.find({'region_name':'The Riverlands'}),
+                            the_vale=mongo.db.region.find({'region_name':'The Vale'}),
+                            the_westerlands=mongo.db.region.find({'region_name':'The Westerlands'}),
+                            the_iron_islands=mongo.db.region.find({'region_name':'The Iron Islands'}),
+                            the_crownlands=mongo.db.region.find({'region_name':'The Crownlands'}),
+                            the_stormlands=mongo.db.region.find({'region_name':'The Stormlands'}),
+                            the_reach=mongo.db.region.find({'region_name':'The Reach'}),
+                            dorne=mongo.db.region.find({'region_name':'Dorne'}),
+                            tully=mongo.db.region.find({'Tully':'Edmure Tully'})
+                            )
 
 
 
@@ -177,7 +168,7 @@ Function for retrieving and displaying all Regions
 """
 @app.route('/get_regions')
 def get_regions():
-    return render_template('regions.html',
+    return render_template('get_regions.html',
                             region=mongo.db.region.find())
 
 
@@ -218,6 +209,40 @@ def insert_region():
 @app.route('/add_region')
 def add_region():
     return render_template('add_region.html')
+
+
+
+
+
+
+
+@app.route('/the_north/region_id')
+def the_north(region_id):
+    return render_template('the_north.html',
+                            house_name=mongo.db.region.find_one({'_id': ObjectId(
+                                                                '5c7bc9d11c9d440000b78303')}))
+
+
+
+
+
+"""
+ALL FUNCTIONS BELOW RELATING TO DEAD ALIVE CHARACTERS
+"""
+
+"""Function for returning all dead characters alphabetically"""
+@app.route('/deceased_characters')
+def deceased_characters():
+    return render_template('deceased_characters.html',
+                            deceased=mongo.db.deceased.find().sort('name'))
+                            
+"""Function for returning alive characters alphabetically"""
+@app.route('/alive_characters')
+def alive_characters():
+    return render_template('alive_characters.html',
+                            alive=mongo.db.alive.find().sort('name'))
+
+
 
 
 

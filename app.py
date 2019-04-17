@@ -32,7 +32,8 @@ def home_page():
                             the_stormlands=mongo.db.region.find({'region_name':'The Stormlands'}),
                             the_reach=mongo.db.region.find({'region_name':'The Reach'}),
                             dorne=mongo.db.region.find({'region_name':'Dorne'}),
-                            tully=mongo.db.region.find({'Tully':'Edmure Tully'})
+                            tully=mongo.db.region.find({'Tully':'Edmure Tully'}),
+                            characters = list(mongo.db.character.find())
                             )
 
 

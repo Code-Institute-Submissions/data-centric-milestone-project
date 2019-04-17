@@ -18,7 +18,18 @@
                         {% for region in the_north %}
                         <div class="collapsible-body">
                             {% for house in region.north_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
@@ -26,28 +37,26 @@
                 </ul>
             </div>
 
-            <div class="collapsible-body"><a href="{{ url_for('riverlands') }}">The Riverlands</a>
+           <div class="collapsible-body"><a href="{{ url_for('riverlands') }}">The Riverlands</a>
                 <ul class="collapsible container">
                     <li>
                         <div class="collapsible-header">Houses</div>
                         {% for region in the_riverlands %}
                         <div class="collapsible-body">
+                            {% for house in region.riverland_house %}
                             <ul class="collapsible container">
                                 <li>
-                                    {% for house in region.riverland_house %}
                                     <div class="collapsible-header">{{ house }}</div>
-                                    {% endfor %}
-
                                     <div class="collapsible-body">
-                                        {% for house in region.riverland_house %}
-                                        <p>{{ house }}</p>
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
                                         {% endfor %}
                                     </div>
-
-
-
                                 </li>
                             </ul>
+                            {% endfor %}
                         </div>
                         {% endfor %}
                     </li>
@@ -63,13 +72,13 @@
                             {% for house in region.the_vale_house %}
                             <ul class="collapsible container">
                                 <li>
-                                    
-                                    
                                     <div class="collapsible-header">{{ house }}</div>
-                                    
-                                    
                                     <div class="collapsible-body">
-                                        <p>Characters</p>
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </li>
                             </ul>
@@ -79,7 +88,8 @@
                     </li>
                 </ul>
             </div>
-
+            
+            
             <div class="collapsible-body"><a href="{{ url_for('stormlands') }}">The Stormlands</a>
                 <ul class="collapsible container">
                     <li>
@@ -87,14 +97,25 @@
                         {% for region in the_stormlands %}
                         <div class="collapsible-body">
                             {% for house in region.stormlands_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
                     </li>
                 </ul>
             </div>
-
+            
             <div class="collapsible-body"><a href="{{ url_for('iron_islands') }}">The Iron Islands</a>
                 <ul class="collapsible container">
                     <li>
@@ -102,7 +123,18 @@
                         {% for region in the_iron_islands %}
                         <div class="collapsible-body">
                             {% for house in region.iron_island_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
@@ -117,14 +149,26 @@
                         {% for region in the_crownlands %}
                         <div class="collapsible-body">
                             {% for house in region.crownlands_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
                     </li>
                 </ul>
             </div>
-
+            
+            
             <div class="collapsible-body"><a href="{{ url_for('reach') }}">The Reach</a>
                 <ul class="collapsible container">
                     <li>
@@ -132,13 +176,25 @@
                         {% for region in the_reach %}
                         <div class="collapsible-body">
                             {% for house in region.reach_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
                     </li>
                 </ul>
             </div>
+
 
             <div class="collapsible-body"><a href="{{ url_for('dorne') }}">Dorne</a>
                 <ul class="collapsible container">
@@ -147,7 +203,18 @@
                         {% for region in dorne %}
                         <div class="collapsible-body">
                             {% for house in region.dorne_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}
@@ -162,7 +229,18 @@
                         {% for region in the_westerlands %}
                         <div class="collapsible-body">
                             {% for house in region.westerlands_house %}
-                            <p>{{ house }}</p>
+                            <ul class="collapsible container">
+                                <li>
+                                    <div class="collapsible-header">{{ house }}</div>
+                                    <div class="collapsible-body">
+                                        {% for character in characters %}
+                                            {% if character.house_name == house %}
+                                                 <p>{{character.name}}<p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
                             {% endfor %}
                         </div>
                         {% endfor %}

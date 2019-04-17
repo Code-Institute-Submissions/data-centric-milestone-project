@@ -274,17 +274,21 @@ def the_north(region_id):
 ALL FUNCTIONS BELOW RELATING TO DEAD ALIVE CHARACTERS
 """
 
-"""Function for returning all dead characters alphabetically"""
+"""Function for returning all dead characters"""
 @app.route('/deceased_characters')
 def deceased_characters():
     return render_template('deceased_characters.html',
-                            deceased=mongo.db.deceased.find().sort('name'))
+                            deceased=mongo.db.deceased.find().sort('name'),
+                            characters = list(mongo.db.character.find()))
                             
-"""Function for returning alive characters alphabetically"""
+"""Function for returning all alive characters"""
 @app.route('/alive_characters')
 def alive_characters():
     return render_template('alive_characters.html',
-                            alive=mongo.db.alive.find().sort('name'))
+                            alive=mongo.db.deceased.find().sort('name'),
+                            characters = list(mongo.db.character.find()))
+                            
+
 
 
 

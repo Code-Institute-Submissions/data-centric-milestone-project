@@ -1,16 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Characters alive up to Season 7</h2>
+<h2>Characters Still Alive up to Season 7</h2>
 
-<ul class="collapsible" data-collapsible="accordion">
-    {% for character in alive %}
-    <li>
-        <div class="collapsible-header">{{character.name}}</div>
-    </li>
-    {% endfor %}
-</ul>
-<div>
-    <a href="" class="waves-effect waves-light">Add Character</a>
+
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for character in characters %} 
+        <li>
+            {% if character.deceased == False %}
+            <div class="collapsible-header">Alive Characters</div>
+                <div class="collapsible-body">
+                    <p>{{ character.name }}</p>
+                    {% endif %} 
+                    {% endfor %}
+                </div>
+        </li>
+    </ul>
 </div>
+
 
 <div>
     <a href="{{ url_for('home_page') }}" class="waves-effect waves-light">Home Page</a>

@@ -1,19 +1,65 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<h2>The North</h2>
-
-<p>Capital: Winterfell</p>
-<p>Ruler: House Stark</p>
-<p>Ruling House Sigil: Grey dire wolf on a white field</p>
-<p>Population: 1 million</p>
-<p>Religion: Old Gods of the Forest</p>
-
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+<div class="container-fluid">
+    <div class="row">
+        <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+    </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <h2>The North</h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row col-8">
+        <ul>
+        <li>Capital: Winterfell</li>
+        <li>Ruler: House Stark</li>
+        <li>Ruling House Sigil: Grey dire wolf on a white field</li>
+        <li>Ruling House Motto: Winter is Coming</li>
+        <li>Population: 1 million</li>
+        <li>Religion: Old Gods of the Forest</li>
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <img class="stark_image" src="/static/css/images/House_Stark.png" alt="House Stark Sigil">
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <h3>Description</h3>
+
+        <p>The North is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the North before the Targaryen conquest and later during the War of the Five Kings and Daenerys Targaryen's invasion of
+            Westeros. Along with the Vale of Arryn, it currently recognizes Daenerys as its sovereign, although it continues to be ruled from Winterfell by House Stark.</p>
+
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <ul class="collapsible container">
+            <li>
+                <div class="collapsible-header">Characters in The North</div>
+                {% for region in the_north %}
+                <div class="collapsible-body">
+                    {% for house in region.north_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+</div>
 
 
 {% endblock %}

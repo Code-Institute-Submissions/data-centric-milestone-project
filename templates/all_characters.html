@@ -1,5 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <h1>All Characters</h1>
+
+
+<div><a href="{{ url_for('add_character') }}">Add Character</a></div>
+
+<div><a href="{{ url_for('home_page') }}">Home Page</a></div>
+
 {% for character in character %}
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -17,8 +23,5 @@
 </ul>
 {% endfor %} 
 
-<div><a href="{{ url_for('add_character') }}">Add Character</a></div>
-
-<div><a href="{{ url_for('home_page') }}">Home Page</a></div>
 
 {% endblock %}

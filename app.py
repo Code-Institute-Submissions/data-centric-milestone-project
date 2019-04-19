@@ -43,7 +43,9 @@ All .HTML pages for Regions
 """
 @app.route('/north')
 def north():
-    return render_template('regions_pages/north.html')
+    return render_template('regions_pages/north.html',
+                            the_north=mongo.db.region.find({'region_name':'The North'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/vale')
 def vale():
@@ -253,19 +255,6 @@ def insert_region():
 @app.route('/add_region')
 def add_region():
     return render_template('add_region.html')
-
-
-
-
-
-
-
-@app.route('/the_north/region_id')
-def the_north(region_id):
-    return render_template('the_north.html',
-                            house_name=mongo.db.region.find_one({'_id': ObjectId(
-                                                                '5c7bc9d11c9d440000b78303')}))
-
 
 
 

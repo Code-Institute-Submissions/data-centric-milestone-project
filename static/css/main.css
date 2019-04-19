@@ -5,3 +5,8 @@
 /*  -o-background-size: cover;*/
 /*  background-size: cover;*/
 /*}*/
+
+.stark_image{
+    height: 50px;
+    width: 50px;
+}

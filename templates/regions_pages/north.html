@@ -1,56 +1,61 @@
+<div class="the_north_background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container-fluid">
+
+<div class="container the_northHTML_title">
     <div class="row">
-        <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"We know no king but the King in the North, whose name is Stark"</h2>
     </div>
 </div>
 
-<div class="container">
+<div class="container wolf-icon-container">
     <div class="row">
-        <h2>The North</h2>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row col-8">
-        <ul>
-        <li>Capital: Winterfell</li>
-        <li>Ruler: House Stark</li>
-        <li>Ruling House Sigil: Grey dire wolf on a white field</li>
-        <li>Ruling House Motto: Winter is Coming</li>
-        <li>Population: 1 million</li>
-        <li>Religion: Old Gods of the Forest</li>
-        </ul>
-    </div>
-
-    <div class="col-4">
-        <img class="stark_image" src="/static/css/images/House_Stark.png" alt="House Stark Sigil">
+        <div class="col s12 wolf-icon">
+            <i class="fab fa-wolf-pack-battalion"></i>
+        </div>
     </div>
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <h3>Description</h3>
 
-        <p>The North is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the North before the Targaryen conquest and later during the War of the Five Kings and Daenerys Targaryen's invasion of
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="the-north-page-title font-family-cinzel">The North</h2>
+            <ul class="list font-family-libre-baskerville">
+                <li><strong><u>Capital:</u></strong> Winterfell</li>
+                <li><strong><u>Ruler:</u></strong> House Stark</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Grey dire wolf on a white field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Winter is Coming"</li>
+                <li><strong><u>Population:</u></strong> 1 million</li>
+                <li><strong><u>Religion:</u></strong> Old Gods of the Forest</li>
+            </ul>
+        </div>
+        <div class="col m6 col s12 stark_image_text_align_center">
+            <img class="stark_image" src="/static/css/images/House_Stark.png" alt="House Stark Sigil">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The North is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the North before the Targaryen conquest and later during the War of the Five Kings and Daenerys Targaryen's invasion of
             Westeros. Along with the Vale of Arryn, it currently recognizes Daenerys as its sovereign, although it continues to be ruled from Winterfell by House Stark.</p>
-
-    </div>
-</div>
-
-
-
-
-<div class="container">
-    <div class="row">
-        <ul class="collapsible container">
-            <li>
-                <div class="collapsible-header">Characters in The North</div>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The North</div>
                 {% for region in the_north %}
-                <div class="collapsible-body">
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
                     {% for house in region.north_house %} {% for character in characters %} {% if character.house_name == house %}
                     <p>{{character.name}}</p>
                     {% endif %} {% endfor %} {% endfor %}
@@ -59,7 +64,11 @@
             </li>
         </ul>
     </div>
+    </div>
+</div>
 </div>
 
-
 {% endblock %}
+
+
+</div>

@@ -1,12 +1,191 @@
-/*body{*/
-/*    background: url('https://i.pinimg.com/originals/3d/ed/8f/3ded8fbee2664984d6b5bf9276716084.jpg') no-repeat center center fixed; */
-/*  -webkit-background-size: cover;*/
-/*  -moz-background-size: cover;*/
-/*  -o-background-size: cover;*/
-/*  background-size: cover;*/
-/*}*/
+/*-----------------------Google Fonts-------------------*/
+
+.font-family-poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-family-raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+.font-family-cinzel{
+    font-family: 'Cinzel', serif;
+}
+
+.font-family-cursive{
+    font-family: cursive;
+}
+
+.font-family-libre-baskerville{
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+
+/*---------------NORTH.HTML STYLES---------------*/
+
+.the_north_background{
+    background: url('/static/css/images/north_remembers.jpg') no-repeat center center fixed;
+    background-size: 100% auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.the_northHTML_title{
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    font-style: italic;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+}
+
+.north_page_font{
+    color: white;
+}
+
+
+.title{
+    text-align: center;
+}
+
+
+.subTitle{
+    text-align: center;
+}
+
+
+.theNorthHeadingContainer{
+    padding-top: 50px;
+}
+
 
 .stark_image{
-    height: 50px;
-    width: 50px;
+    width: 90%;
+    padding-left: 20px;
+}
+
+.the-north-page-title{
+    text-decoration: overline;
+    letter-spacing: 6px;
+    font-size: 65px;
+}
+
+.homePage-link{
+    padding: 0px;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.list {
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 1;
+    padding-top: 30px;
+}
+
+.the_north_decription_title{
+    letter-spacing: 4px;
+    text-decoration: underline;
+}
+
+.the_north_decription{
+    font-size: 22;
+    letter-spacing: .5px;
+}
+
+.home_page_link{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: overline;
+    font-size: 17px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+.northern_characters_container{
+    text-align: center;
+    padding-top: 100px;
+    letter-spacing: 4px;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.collapsible_header{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border-bottom: 4px solid white;
+    font-size: 40px;
+}
+
+.collapsible_container{
+    border-color: transparent;
+    box-shadow: none;
+    padding-left: 10px;
+}
+
+.characters_in_the_north_collapsible_body{
+    border-color: transparent;
+    color: white;
+    letter-spacing: 4px;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.north_description_title_and_text{
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 15px
+}
+
+.container_padding_top{
+    padding-top: 100px;
+}
+
+.wolf-icon{
+    text-align: center;
+    font-size: 110px;
+    color: snow;
+}
+
+.wolf-icon-container{
+    padding-bottom: 40px;
+}
+
+/*--------------------------NORTH.HTML STYLES MEDIA---------------------*/
+
+@media screen and (min-width: 300px) and (max-width: 420px) {  
+  .the_northHTML_title {font-size: 26px;}
+}
+
+@media (max-width: 544px) {  
+  .the_northHTML_title {font-size: 30px;}
+  .wolf-icon {font-size: 80px;}
+  .north_page_font {text-align: center;}
+  .stark_image_text_align_center {text-align: center;}
+}
+
+
+@media screen and (min-width: 545px) and (max-width: 768px) {
+    .the-north-page-title {font-size: 38px;}
+    .home_page_link {font-size: 14px}
+    .list {font-size: 18px;}
+    .the_north_decription_title {font-size: 24px;}
+    .the_north_decription {font-size: 17px;}
+    .collapsible_header {font-size: 24px; border-bottom: 1px solid white;}
+    .characters_in_the_north_collapsible_body {font-size: 17px;}
+}
+
+@media screen and (max-width: 544px) {
+    .the-north-page-title {text-align: center;}
+    .list {text-align: center;}
+    .home_page_link {text-align: center;}
+    .the_north_decription {text-align: center;}
+    .collapsible_header {text-align: center;}
+    .characters_in_the_north_collapsible_body {text-align: center;}
 }

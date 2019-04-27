@@ -1,12 +1,79 @@
+<div class="dorne-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>Dorne</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"Tell your father I'm here — and tell him the Lannisters aren't the only ones who pay their debts"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <img src="/static/css/images/sun.png"></img>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">Dorne</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Sunspear</li>
+                <li><strong><u>Ruler:</u></strong> House Martell</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Red sun, pierced by a yellow spear on an orange field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Unbowed, Unbent, Unbroken"</li>
+                <li><strong><u>Population:</u></strong> 450 Thousand</li>
+                <li><strong><u>Religion:</u></strong> Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/house-martell-sigil.png" alt="House Martell sigil. Red sun, pierced by a yellow spear on an orange field">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">Dorne is one of the nine constituent regions of the Seven Kingdoms. It is the southernmost part of the continent of Westeros, located thousands of miles from Winterfell and the North, and has a harsh desert climate. The Dornishmen are ethnically distinct from the rest of the Seven Kingdoms, being largely descended from Rhoynar refugees who intermarried with the local population of Andals and First Men roughly a thousand years ago. As a result, they have very different customs and traditions compared to the other regions of Westeros.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in Dorne</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

@@ -1,12 +1,79 @@
+<div class="stormlands-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Stormlands</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"I was never so alive as when I was winning this throne, or so dead as now that I've won it"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <img src="/static/css/images/stag.png"></img>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">The Stormlands</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Storm's End</li>
+                <li><strong><u>Ruler:</u></strong> House Baratheon</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Black stag on a golden field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Ours is the fury"</li>
+                <li><strong><u>Population:</u></strong> 700 Thousand</li>
+                <li><strong><u>Religion:</u></strong> The Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/House-Baratheon-Main-Shield.PNG.png" alt="House Baratheon sigil. Black stag on a golden field">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Stormlands is one of the nine constituent regions of the Seven Kingdoms. It is located on the south east coast of the continent of Westeros, on the shores of the Narrow Sea, south of the Crownlands and north of Dorne. The Stormlands are traditionally ruled from the castle of Storm's End, formerly by House Baratheon. They are so-named for the savage and frequent storms from the Narrow Sea that batter the coast. It was originally a sovereign nation known as the Storm Kingdom, until Aegon the Conqueror united Westeros under his rule.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The Stormlands</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

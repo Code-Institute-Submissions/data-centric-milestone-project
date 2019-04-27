@@ -1,4 +1,4 @@
-<div class="">
+<div class="crownlands-background">
 
 
 {% extends 'base.html' %}
@@ -8,16 +8,12 @@
 
 <div class="container the_northHTML_title">
     <div class="row">
-    <h2 class="col 6 the_northHTML_title font-family-cursive">""</h2>
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"I will take what is mine with fire and blood"</h2>
     </div>
 </div>
 
-<div class="container wolf-icon-container">
-    <div class="row">
-        <div class="col s12 wolf-icon">
-            <i class="fab fa-wolf-pack-battalion"></i>
-        </div>
-    </div>
+<div class="container icon-container header-icon">
+    <img class="dragon-head-icon" src="/static/css/images/dragon7.png"></img>
 </div>
 
 
@@ -26,38 +22,46 @@
     <div class="row">
         <div class="col m6 col s12 north_page_font">
             <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
-            <h2 class="the-north-page-title font-family-cinzel">The Crownlands</h2>
-            <ul class="list font-family-libre-baskerville">
-                <li><strong><u>Capital:</u></strong> Winterfell</li>
-                <li><strong><u>Ruler:</u></strong> House Stark</li>
-                <li><strong><u>Ruling House Sigil:</u></strong> Grey dire wolf on a white field</li>
-                <li><strong><u>Ruling House Motto:</u></strong> "Winter is Coming"</li>
-                <li><strong><u>Population:</u></strong> 1 million</li>
-                <li><strong><u>Religion:</u></strong> Old Gods of the Forest</li>
-            </ul>
-        </div>
-        <div class="col m6 col s12 stark_image_text_align_center">
-            <img class="stark_image" src="/static/css/images/House_Stark.png" alt="House Stark Sigil">
+            <h2 class="font-family-cinzel the_crownlands_title">The Crownlands</h2>
         </div>
     </div>
 </div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Kings Landing, also the Capital of Westeros</li>
+                <li><strong><u>Ruler:</u></strong> House Targaryen</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Red three headed dragon on a black field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Fire and Blood"</li>
+                <li><strong><u>Population:</u></strong> 800 Thousand</li>
+                <li><strong><u>Religion:</u></strong> Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/targaryen-sigil.png" alt="House Targaryen sigil. Red, 3 headed dragon on a black field">
+        </div>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="container-fluid container_padding_top">
     <div class="row north_page_font">
         <div class="col m6 col s12 north_description_title_and_text">
         <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
-        <p class="the_north_decription font-family-libre-baskerville">The North is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the North before the Targaryen conquest and later during the War of the Five Kings and Daenerys Targaryen's invasion of
-            Westeros. Along with the Vale of Arryn, it currently recognizes Daenerys as its sovereign, although it continues to be ruled from Winterfell by House Stark.</p>
+        <p class="the_north_decription font-family-libre-baskerville">The crownlands is one of the nine constituent regions of the Seven Kingdoms of Westeros. It was never a sovereign nation, instead being contested by river kings, Storm Kings, and local petty kings until Aegon the Conqueror seized control of the area during his Wars of Conquest and made it his primary foothold on the continent. Since then, the crownlands have been ruled directly by the crown on the Iron Throne, first House Targaryen and, after Robert's Rebellion, House Baratheon. Bastards of noble origin raised in the crownlands are given the surname Waters. Some notable houses of the crownlands include Bar Emmon, Celtigar, Massey, Rosby, Rykker, Stokeworth, Sunglass, and Velaryon.</p>
         </div>
         
     <div class="col m6 col s12 northern_characters_container">
         <ul class="collapsible container collapsible_container">
             <li class="font-family-cinzel">
-                <div class="collapsible-header collapsible_header">Characters in The North</div>
-                {% for region in the_north %}
+                <div class="collapsible-header collapsible_header">Characters in The Crownlands</div>
+                {% for region in the_crownlands %}
                 <div class="collapsible-body characters_in_the_north_collapsible_body">
-                    {% for house in region.north_house %} {% for character in characters %} {% if character.house_name == house %}
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
                     <p>{{character.name}}</p>
                     {% endif %} {% endfor %} {% endfor %}
                 </div>

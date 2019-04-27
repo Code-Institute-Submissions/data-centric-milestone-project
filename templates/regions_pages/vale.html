@@ -1,12 +1,79 @@
+<div class="vale-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Vale</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"We keep no headsman in the Eyrie, my lord of Lannister. Open the Moon Door"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <img src="/static/css/images/falcon.png"></img>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">The Vale</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> The Eyrie</li>
+                <li><strong><u>Ruler:</u></strong> House Arryn</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> A white crescent moon and falcon on a blue field.</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "As High as Honour"</li>
+                <li><strong><u>Population:</u></strong> 400 Thousand</li>
+                <li><strong><u>Religion:</u></strong> The Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/House-Arryn-Main-Shield.PNG.png" alt="House Arryn sigil. A white crescent moon and falcon on a blue field. ">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Vale of Arryn, often referred to simply as the Vale, is one of the constituent regions of the Seven Kingdoms. Prior to the Targaryen Conquest, it was a sovereign nation known as the Kingdom of Mountain and Vale. It is ruled by House Arryn, from the Eyrie. Protected and surrounded by the Mountains of the Moon, the Vale is isolated from the rest of Westeros and is accessible only during warmer seasons.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The Vale</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

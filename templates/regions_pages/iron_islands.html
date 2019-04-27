@@ -1,12 +1,79 @@
+<div class="iron-islands-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Iron Islands</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"What is dead, may never die"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <i class="fab fa-gitkraken"></i>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">Iron Islands</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Pyke</li>
+                <li><strong><u>Ruler:</u></strong> House Greyjoy</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Golden kraken on a black field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "We Do Not Sow"</li>
+                <li><strong><u>Population:</u></strong> 30 Thousand</li>
+                <li><strong><u>Religion:</u></strong> The Drowned God</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/house-grejoy-sigil.png" alt="House Greyjoy sigil. Golden kraken on a black field">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Iron Islands form part of the Kingdom of the Iron Islands. It had previously formed one of the nine constituent regions of Westeros. They are a group of seven small rocky islands clustered far off the western coast of the mainland of the continent, in Ironman's Bay. The Iron Islands are ruled from Pyke by House Greyjoy</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters on The Iron Islands</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

@@ -1,12 +1,79 @@
+<div class="riverlands-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Riverlands</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"When people ask you what happened here, tell them the north remembers. tell them, winter came for house frey"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <img src="/static/css/images/trout.png"></img>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">The Riverlands</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Riverrun</li>
+                <li><strong><u>Ruler:</u></strong> House Tully</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> silver trout on a red and blue background</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Family, Duty, Honour"</li>
+                <li><strong><u>Population:</u></strong> 500 Thousand</li>
+                <li><strong><u>Religion:</u></strong> The Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/House-Tully-Main-Shield.PNG.png" alt="House Tully sigil. Silver trout on a blue and red field">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Riverlands is one of the constituent regions of the Seven Kingdoms. They have been a frequent battleground in the civil wars that have afflicted the Seven Kingdoms and also in the wars that took place between the old nations of the continent before the Targaryen Conquest. During the time of the First Men, the Riverlands were an independent kingdom known as the Kingdom of the Rivers and the Hills.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The Riverlands</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

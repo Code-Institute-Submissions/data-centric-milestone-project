@@ -1,12 +1,79 @@
+<div class="the-reach-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Reach</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"The lords of Westeros are sheep. Are you a sheep? No. You’re a dragon. Be a dragon"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <ion-icon name="rose"></ion-icon>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">The Reach</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Highgarden</li>
+                <li><strong><u>Ruler:</u></strong> House Tyrell</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Golden Rose on a Green Field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Growing Strong"</li>
+                <li><strong><u>Population:</u></strong> 1.2 Million</li>
+                <li><strong><u>Religion:</u></strong> The Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/House-Tyrell-Main-Shield.PNG.png" alt="House Tyrell sigil. Golden rose on a pale green field.">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Reach is one of the administrative regions of the Seven Kingdoms, and was formerly a sovereign nation known as the Kingdom of the Reach before the Targaryen conquest. Geographically, it is one of the larger regions of the Seven Kingdoms, ranking as the second largest in area, behind only the vastness of the North. It has been ruled by House Tyrell since the Conquest, and earlier than that by the Kings of House Gardener.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The Reach</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

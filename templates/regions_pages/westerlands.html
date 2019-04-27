@@ -1,12 +1,79 @@
+<div class="westerlands-background">
+
+
 {% extends 'base.html' %}
 {% block content %}
 
 
-<h2>The Westerlands</h2>
+
+<div class="container the_northHTML_title">
+    <div class="row">
+    <h2 class="col 6 the_northHTML_title font-family-cursive">"A lannister always pays his debts"</h2>
+    </div>
+</div>
+
+<div class="container icon-container header-icon">
+    <img class="lion-head-icon" src="/static/css/images/lion-head.png"></img>
+</div>
 
 
-<div>
-    <a href="{{url_for('home_page')}}" class="waves-effect waves-light">Home Page</a>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class="col m6 col s12 north_page_font">
+            <a class="home_page_link" href="{{ url_for('home_page') }}">Home Page</a>
+            <h2 class="font-family-cinzel the_crownlands_title">The Westerlands</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container theNorthHeadingContainer">
+    <div class="row">
+        <div class=" north_page_font">
+            <ul class="list font-family-libre-baskerville col m6 col s12">
+                <li><strong><u>Capital:</u></strong> Casterly Rock</li>
+                <li><strong><u>Ruler:</u></strong> House Lannister</li>
+                <li><strong><u>Ruling House Sigil:</u></strong> Golden lion on a red field</li>
+                <li><strong><u>Ruling House Motto:</u></strong> "Hear Me Roar"</li>
+                <li><strong><u>Population:</u></strong> 700 Thousand</li>
+                <li><strong><u>Religion:</u></strong> The Faith of the Seven</li>
+            </ul>
+        
+        <div class="stark_image_text_align_center col m6 col s12">
+            <img class="dragon-icon" src="/static/css/images/house-lannister-sigil.png" alt="House Lannister sigil. Golden lion on a red field">
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid container_padding_top">
+    <div class="row north_page_font">
+        <div class="col m6 col s12 north_description_title_and_text">
+        <h3 class='the_north_decription_title  font-family-cinzel'>Description</h3>
+        <p class="the_north_decription font-family-libre-baskerville">The Westerlands is one of the constituent regions of the Seven Kingdoms. It was formerly a sovereign realm known as the Kingdom of the Rock before the Targaryen conquest. The Westerlands are ruled from the castle of Casterly Rock by House Lannister. It is one of the smaller regions of the Seven Kingdoms geographically but has one of the larger populations. It is also immensely rich in natural resources, particularly metals. Predominantly mountainous, the hills of the Westerlands are riddled with veins of gold and silver, the mining of which has made the Lannisters and their bannermen immensely rich; the abundance of iron also allows them to easily forge weapons and military equipment. While the Lannister armies are not as huge as those of the Reach, they are the best-equipped in the realm with heavily-armored soldiers and cavalry.</p>
+        </div>
+        
+    <div class="col m6 col s12 northern_characters_container">
+        <ul class="collapsible container collapsible_container">
+            <li class="font-family-cinzel">
+                <div class="collapsible-header collapsible_header">Characters in The Westerlands</div>
+                {% for region in the_crownlands %}
+                <div class="collapsible-body characters_in_the_north_collapsible_body">
+                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    <p>{{character.name}}</p>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
 </div>
 
 {% endblock %}
+
+
+</div>

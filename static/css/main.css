@@ -20,9 +20,75 @@
     font-family: 'Libre Baskerville', serif;
 }
 
+/*-------------------HOME PAGE-----------------------*/
+
+.home-page-title{
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    text-shadow: 4px 4px rgb(60, 55, 55);
+    font-size: 88px;
+}
+
+
+.home-page-sub-title{
+    color: silver;
+    text-align: center;
+}
+
+.cersei-quote{
+    color: snow;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 42px;
+    padding-bottom: 25px;
+    letter-spacing: 2.3px;
+    text-transform: capitalize;
+    text-shadow: 2px 2px rgb(60, 55, 55);
+}
+
+
+.transparent-border{
+    border-color: transparent;
+}
+
+.box-shadow {
+    box-shadow: none;
+}
+
+.white-text{
+    color: white;
+}
+
+.region-name{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 2;
+    font-size: 20px;
+    font-family: 'Cinzel', serif;
+}
+
+
+.background-none{
+    background: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: solid;
+}
+
 
 /*---------------BACKGROUNDS---------------*/
 
+.home-page-bg{
+    background: url('/static/css/images/iron-throne.jpg') no-repeat center center fixed;
+    background-size: 100% auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
 
 .crownlands-background{
     background: url('/static/css/images/throne-room.jpg') no-repeat center center fixed;
@@ -283,6 +349,6 @@
     .list {text-align: center;}
     .home_page_link {text-align: center;}
     .the_north_decription {text-align: center;}
-    .collapsible_header {text-align: center;}
-    .characters_in_the_north_collapsible_body {text-align: center;}
+    .collapsible_header {text-align: center; font-size: 22px;}
+    .characters_in_the_north_collapsible_body {text-align: center; font-size: 14px;}
 }

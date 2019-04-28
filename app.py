@@ -49,35 +49,52 @@ def north():
 
 @app.route('/vale')
 def vale():
-    return render_template('regions_pages/vale.html')
+    return render_template('regions_pages/vale.html',
+                            the_vale=mongo.db.region.find({'region_name':'The Vale'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/riverlands')
 def riverlands():
-    return render_template('regions_pages/riverlands.html')
+    return render_template('regions_pages/riverlands.html',
+                            the_riverlands=mongo.db.region.find({'region_name':'The Riverlands'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/westerlands')
 def westerlands():
-    return render_template('regions_pages/westerlands.html')
+    return render_template('regions_pages/westerlands.html',
+                            the_westerlands=mongo.db.region.find({'region_name':'The Westerlands'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/iron_islands')
 def iron_islands():
-    return render_template('regions_pages/iron_islands.html')
+    return render_template('regions_pages/iron_islands.html',
+                            the_iron_islands=mongo.db.region.find({'region_name':'The Iron Islands'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/crownlands')
 def crownlands():
-    return render_template('regions_pages/crownlands.html')
+    return render_template('regions_pages/crownlands.html',
+                            the_crownlands=mongo.db.region.find({'region_name':'The Crownlands'}),
+                            characters = list(mongo.db.character.find()))
+
 
 @app.route('/dorne')
 def dorne():
-    return render_template('regions_pages/dorne.html')
+    return render_template('regions_pages/dorne.html',
+                            dorne=mongo.db.region.find({'region_name':'Dorne'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/reach')
 def reach():
-    return render_template('regions_pages/reach.html')
+    return render_template('regions_pages/reach.html',
+                            the_reach=mongo.db.region.find({'region_name':'The Reach'}),
+                            characters = list(mongo.db.character.find()))
 
 @app.route('/stormlands')
 def stormlands():
-    return render_template('regions_pages/stormlands.html')
+    return render_template('regions_pages/stormlands.html',
+                            the_stormlands=mongo.db.region.find({'region_name':'The Stormlands'}),
+                            characters = list(mongo.db.character.find()))
                             
 
 

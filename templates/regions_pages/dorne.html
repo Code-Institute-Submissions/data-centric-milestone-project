@@ -59,9 +59,9 @@
         <ul class="collapsible container collapsible_container">
             <li class="font-family-cinzel">
                 <div class="collapsible-header collapsible_header">Characters in Dorne</div>
-                {% for region in the_crownlands %}
+                {% for region in dorne %}
                 <div class="collapsible-body characters_in_the_north_collapsible_body">
-                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    {% for house in region.dorne_house %} {% for character in characters %} {% if character.house_name == house %}
                     <p>{{character.name}}</p>
                     {% endif %} {% endfor %} {% endfor %}
                 </div>

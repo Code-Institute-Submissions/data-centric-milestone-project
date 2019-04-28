@@ -1,28 +1,47 @@
+.
+<div class="home-page-bg">
+
 {% extends 'base.html' %} {% block content %}
 
-<div><a href="{{ url_for('get_all_characters') }}">All Characters</a></div>
+<div class="container">
+    <div class="row">
+        <h1 class="home-page-title font-family-cinzel">Game of Thrones Characters</h1>
+    </div>
+    <div class="row">
+        <h4 class="home-page-sub-title font-family-libre-baskerville">HBO's T.V Series adaptation of George R.R Martin's book series A song of Ice and Fire</h4>
+    </div>
+    <div class="row">
+        <p class="cersei-quote font-family-cursive">"When you play the game of thrones, you win or you die. There is no middle ground"</p>
+    </div>
 
-<div><a href="{{ url_for('get_houses') }}">Houses</a></div>
 
-<div class="container-fluid">
+<div class="row"><a href="{{ url_for('get_all_characters') }}">All Characters</a>
+        <div><a href="{{ url_for('get_houses') }}">Houses</a></div>
+    </div>
+</div>
+
+
+<div class="container">
 <div class="row">
-    <ul class="collapsible" data-collapsible="accordion">
+    <ul class="collapsible transparent-border box-shadow centered-text" data-collapsible="accordion">
         <li>
-            <div class="collapsible-header">
+            <div class="collapsible-header background-none">
                 <h4>Regions</h4>
             </div>
 
-            <div class="collapsible-body"><a href="{{ url_for('north') }}">The North</a>
-                <ul class="collapsible container">
+
+            
+            <div class="collapsible-body transparent-border"><a class="region-name" href="{{ url_for('north') }}">The North</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_north %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.north_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -38,17 +57,17 @@
                 </ul>
             </div>
 
-           <div class="collapsible-body"><a href="{{ url_for('riverlands') }}">The Riverlands</a>
-                <ul class="collapsible container">
+           <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('riverlands') }}">The Riverlands</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_riverlands %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.riverland_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -64,17 +83,17 @@
                 </ul>
             </div>
 
-            <div class="collapsible-body"><a href="{{ url_for('vale') }}">The Vale</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('vale') }}">The Vale</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_vale %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.the_vale_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -91,17 +110,17 @@
             </div>
             
             
-            <div class="collapsible-body"><a href="{{ url_for('stormlands') }}">The Stormlands</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('stormlands') }}">The Stormlands</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_stormlands %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.stormlands_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -117,17 +136,17 @@
                 </ul>
             </div>
             
-            <div class="collapsible-body"><a href="{{ url_for('iron_islands') }}">The Iron Islands</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('iron_islands') }}">The Iron Islands</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_iron_islands %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.iron_island_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -143,17 +162,17 @@
                 </ul>
             </div>
 
-            <div class="collapsible-body"><a href="{{ url_for('crownlands') }}">The Crownlands</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('crownlands') }}">The Crownlands</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_crownlands %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.crownlands_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -170,17 +189,17 @@
             </div>
             
             
-            <div class="collapsible-body"><a href="{{ url_for('reach') }}">The Reach</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('reach') }}">The Reach</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_reach %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.reach_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -197,17 +216,17 @@
             </div>
 
 
-            <div class="collapsible-body"><a href="{{ url_for('dorne') }}">Dorne</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('dorne') }}">Dorne</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in dorne %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.dorne_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -223,17 +242,17 @@
                 </ul>
             </div>
 
-            <div class="collapsible-body"><a href="{{ url_for('westerlands') }}">The Westerlands</a>
-                <ul class="collapsible container">
+            <div class="collapsible-body transparent-border box-shadow"><a class="region-name" href="{{ url_for('westerlands') }}">The Westerlands</a>
+                <ul class="collapsible container transparent-border box-shadow">
                     <li>
-                        <div class="collapsible-header">Houses</div>
+                        <div class="collapsible-header background-none">Houses</div>
                         {% for region in the_westerlands %}
-                        <div class="collapsible-body">
+                        <div class="collapsible-body transparent-border box-shadow">
                             {% for house in region.westerlands_house %}
-                            <ul class="collapsible container">
+                            <ul class="collapsible container transparent-border box-shadow">
                                 <li>
-                                    <div class="collapsible-header">{{ house }}</div>
-                                    <div class="collapsible-body">
+                                    <div class="collapsible-header background-none font-family-libre-baskerville">{{ house }}</div>
+                                    <div class="collapsible-body transparent-border box-shadow white-text">
                                         {% for character in characters %}
                                             {% if character.house_name == house %}
                                                  <p>{{character.name}}<p>
@@ -271,3 +290,4 @@
 
 
 {% endblock %}
+</div>

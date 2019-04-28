@@ -12,13 +12,11 @@ Use this section to provide insight into your UX process, focusing on who this w
 
 'As a user I would like to be able to easily discern which character belongs to which house so that it is easier to understand who are allies and distant relatives'
 
-'As a fan of Game of Thrones, I would like to know, up to Season 7, which characters have been killed off. This is so I know what to expect from the final season'
 
 'As a user I would like a 'live' website that will allow myself and others to add character infomation to it as the show still has not finished. It would be great to add any new/old characters and any info that someone else adding character info may have missed for referencing purposes for myself'
 
 'As a Game of Thrones fan I would like to remember which house is in what region. I'd like the ability to visually see which house is where to understand which houses are allies'
 
-'As a Game of Thrones fan, it would be great to see which characters appear in which seasons as there are so many to remember it would be good to know when they're introduced'
 
 Mockups are situated in a folder named 'mockups'
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.

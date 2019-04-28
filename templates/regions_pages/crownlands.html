@@ -61,7 +61,7 @@
                 <div class="collapsible-header collapsible_header">Characters in The Crownlands</div>
                 {% for region in the_crownlands %}
                 <div class="collapsible-body characters_in_the_north_collapsible_body">
-                    {% for house in crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
+                    {% for house in region.crownlands_house %} {% for character in characters %} {% if character.house_name == house %}
                     <p>{{character.name}}</p>
                     {% endif %} {% endfor %} {% endfor %}
                 </div>

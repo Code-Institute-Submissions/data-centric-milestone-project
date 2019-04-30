@@ -8,7 +8,7 @@ Use this section to provide insight into your UX process, focusing on who this w
 
 
 ###User Stories:
-'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remeber names to faces. I would like the list displayed alphabetically so it is easy to look through and digest'
+'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remember names to faces. I would like the list displayed alphabetically so it is easy to look through and digest'
 
 'As a user I would like to be able to easily discern which character belongs to which house so that it is easier to understand who are allies and distant relatives'
 

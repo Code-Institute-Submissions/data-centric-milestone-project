@@ -1,8 +1,16 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Add a Character</h1>
 
-<div class="row">
-    <form action="{{ url_for('insert_character') }}" method='POST' class="col s12">
+
+<div class="all-characters-page-bg">
+    
+    
+    
+<h1 class="margin-0 all-characters-page-title font-family-cinzel">Add a Character</h1>
+
+
+<div class="container">
+<div class="row transparent-border margin-0">
+    <form class="margin-120px" action="{{ url_for('insert_character') }}" method='POST' class="col s12">
         <div class="row">
             <div class="input-field col s12">
                 <input id="name" name="name" type="text" class="validate">
@@ -25,20 +33,20 @@
                 </select>
             </div>
         </div>
-        <div class="row">
+         <div class="row">
             <div class="input-field col s12">
-                <select id="house_name" name="house_name" class="icons">
-                  <option value="" disabled selected>House Name</option>
-                  {% for house in house_name %}
-                      <option value="{{house.house_name}}" data-icon="">{{house.house_name}}</option>
-                  {% endfor %}
-                </select>
+                <input id="name" name="name" type="text" class="validate">
+                <label for="icon_prefix">House Name</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">
-            <i class="material-icons right">Add Character</i>
-          </button>
+        <button class="submit-button font-family-raleway" type="submit" name="action">
+            Add Character
+        </button>
     </form>
 </div>
+
+
+</div>
+
 
 {% endblock %}

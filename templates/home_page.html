@@ -1,32 +1,39 @@
-.
+{% extends 'base.html' %} {% block content %}
+
+
 <div class="home-page-bg">
 
-{% extends 'base.html' %} {% block content %}
+
 
 <div class="container">
     <div class="row">
         <h1 class="home-page-title font-family-cinzel">Game of Thrones Characters</h1>
     </div>
     <div class="row">
-        <h4 class="home-page-sub-title font-family-libre-baskerville">HBO's T.V Series adaptation of George R.R Martin's book series A song of Ice and Fire</h4>
-    </div>
-    <div class="row">
         <p class="cersei-quote font-family-cursive">"When you play the game of thrones, you win or you die. There is no middle ground"</p>
     </div>
 
 
-<div class="row"><a href="{{ url_for('get_all_characters') }}">All Characters</a>
-        <div><a href="{{ url_for('get_houses') }}">Houses</a></div>
+<div class="container">
+    <div class="row characters-houses-link-centering">
+        <div class="col s12 m4 l4"><a class="all-characters-link font-family-cinzel" href="{{ url_for('get_all_characters') }}">Characters</a>
+        </div>
+        <div class="col s12 m4 l4">
+            
+        </div>
+        <div class="col s12 m4 l4">
+            <a class="houses-link font-family-cinzel" href="{{ url_for('get_houses') }}">Houses</a>
+        </div>
     </div>
 </div>
 
 
 <div class="container">
-<div class="row">
+<div class="row margin-0">
     <ul class="collapsible transparent-border box-shadow centered-text" data-collapsible="accordion">
         <li>
             <div class="collapsible-header background-none">
-                <h4>Regions</h4>
+                <h4 class="font-family-cinzel">Regions</h4>
             </div>
 
 
@@ -273,21 +280,21 @@
     </ul>
 </div>
 </div>
+
+<div class="container">
+    <div class="row margin-0">
+        <h4 class="home-page-sub-title font-family-libre-baskerville">HBO's T.V Series adaptation of George R.R Martin's book series A song of Ice and Fire</h4>
+    </div>
 </div>
 
-<ul class="collapsible" data-collapsible="accordion">
-    <li>
-        <div class="collapsible-header">
-            <h5>Dead and Alive Characters up to season 7 *SPOILERS ALERT*</h5>
-        </div>
-        <div class="collapsible-body"><a href="{{ url_for('deceased_characters') }}">Dead</a></div>
-        <div class="collapsible-body"><a href="{{ url_for('alive_characters') }}">Alive</a></div>
-        
-    </li>
-</ul>
+
+</div>
 
 
+
+
+
+</div>
 
 
 {% endblock %}
-</div>

@@ -1,6 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Edit a Character</h1>
 
+<div class="all-characters-page-bg padding-bottom-100px">
+
+<h1 class="margin-0 all-characters-page-title font-family-cinzel padding-bottom-100px">Edit a Character</h1>
+
+
+<div class="container">
 <div class="row">
     <form action="{{ url_for('update_character', character_id=character._id) }}" method='POST' class="col s12">
         <div class="row">
@@ -17,7 +22,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select id="region_name" name="region_name" class="icons">
+                <select id="region_name" name="region_name">
                   <option value="" disabled selected>Region Name</option>
                   {% for region in region_name %}
                       {% if region.region_name == character.region_name %}
@@ -31,7 +36,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select id="house_name" name="house_name" class="icons">
+                <select id="house_name" name="house_name">
                   <option value="" disabled selected>House Name</option>
                     {% for house in house_name %}
                         {% if house.house_name == character.house_name %}
@@ -43,33 +48,15 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="episodes" name="episodes" type="text" class="validate" value="{{character.episodes}}">
-                <label for="icon_telephone">Episode Count</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="deceased" name="deceased" type="text" class="validate" value="{{character.deceased}}">
-                <label for="icon_telephone">Deceased</label>
-            </div>
-        </div>
-        <div class="file-field input-field">
-            <div class="btn">
-                <span>Image of Character</span>
-                <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-            </div>
-        </div>
         <div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">
-                <i class="material-icons right">Confirm Changes</i>
+            <button class="submit-button font-family-raleway" type="submit" name="action">
+                Confirm Changes
             </button>
         </div>
     </form>
+</div>
+</div>
+
 </div>
 
 {% endblock %}

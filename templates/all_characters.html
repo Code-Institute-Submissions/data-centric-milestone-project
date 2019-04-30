@@ -1,27 +1,45 @@
+<div class="all-characters-page-bg padding-bottom-100px">
+
 {% extends 'base.html' %} {% block content %}
-<h1>All Characters</h1>
+<h1 class="margin-0 all-characters-page-title font-family-cinzel">All Characters</h1>
 
 
-<div><a href="{{ url_for('add_character') }}">Add Character</a></div>
+<div class="container">
+    <div class="row add-character-home-page">
+        <div class="col s12 m4 l4"><a class="add-character-home-page font-family-cinzel" href="{{ url_for('add_character') }}">Add Character</a>
+        </div>
+        <div class="col s12 m4 l4">
+            
+        </div>
+        <div class="col s12 m4 l4">
+            <a class="add-character-home-page font-family-cinzel" href="{{ url_for('home_page') }}">Home Page</a>
+        </div>
+    </div>
+</div>
 
-<div><a href="{{ url_for('home_page') }}">Home Page</a></div>
 
 {% for character in character %}
 
-<ul class="collapsible" data-collapsible="accordion">
+<div class="container">
+    
+    
+    
+<ul class="collapsible box-shadow transparent-border margin-0 padding-bottom-20px" data-collapsible="accordion">
     <li>
-        <div class="collapsible-header">{{ character.name }}</div>
-        <div class="collapsible-body"><span>{{ character.description }}<br>{{ character.region_name }}<br>{{ character.house_name }}<br>{{ character.episodes }}<br>{{ character.deceased }}</span>
-            <div class="edit_character_button">
-                <a href="{{url_for('edit_character', character_id=character._id)}}" class="waves-effect waves-light btn-small">Edit Character Info</a>
+        <div class="collapsible-header transparent-border box-shadow background-none letter-spacing-2px font-size-16px">{{ character.name }}</div>
+        <div class="collapsible-body border-bottom-none all-characters-accordion-desc"><span>{{ character.description }}<br>{{ character.region_name }}<br>{{ character.house_name }}<br>{{ character.episodes }}<br>{{ character.deceased }}</span>
+            <div class="edit-and-delete-character-button">
+                <a class="edit-and-delete-character-button" href="{{url_for('edit_character', character_id=character._id)}}" class="waves-effect waves-light btn-small">Edit Character Info</a>
             </div>
-            <div class="delete_character_button">
-                <a href="{{url_for('delete_character', character_id=character._id)}}" class="waves-effect waves-light">Delete Entire Character Entry</a>
+            <div class="edit-and-delete-character-button">
+                <a class="edit-and-delete-character-button" href="{{url_for('delete_character', character_id=character._id)}}" class="waves-effect waves-light">Delete Entire Character Entry</a>
             </div>
         </div>
     </li>
 </ul>
+</div>
 {% endfor %} 
 
 
 {% endblock %}
+</div>

@@ -405,6 +405,9 @@
     margin-bottom: 120px;
 }
 
+.padding-bottom-55px{
+    padding-bottom: 55px;
+}
 
 .submit-button{
     color: white;
@@ -416,6 +419,65 @@
     text-transform: uppercase;
     font-size: 17px;
 }
+
+
+.max-width-60{
+    max-width: 60%;
+}
+
+
+.active{
+    color: white;
+    font-size: 18px;
+}
+
+
+#name.validate.active{
+    border-bottom: 2px solid #fbf8f8;
+    padding-top: 40px;
+}
+
+#description.materialize-textarea {
+    border-bottom: 2px solid #fbf8f8;
+    padding-top: 40px;
+    color: white;
+    font-size: 18px;
+}
+
+#name.validate{
+    border-bottom: 2px solid #fbf8f8;
+    padding-top: 40px;
+    color: white;
+    font-size: 18px;
+}
+
+.select-dropdown, .select-wrapper{
+    color: white;
+    font-size: 60px;
+    border-bottom: 2px solid white;
+    padding-top: 40px;
+}
+
+.caret{
+    color: white;
+}
+
+#house_name{
+    color: white;
+}
+
+.dropdown-content li>span{
+    color: white;
+    padding-bottom: 30px;
+}
+
+.dropdown-content{
+    background-color: silver;
+    opacity: 0.5;
+}
+
+
+
 
 /*--------------------------.HTML STYLES MEDIA---------------------*/
 

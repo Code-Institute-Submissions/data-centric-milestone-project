@@ -27,7 +27,7 @@
 <ul class="collapsible box-shadow transparent-border margin-0 padding-bottom-20px" data-collapsible="accordion">
     <li>
         <div class="collapsible-header transparent-border box-shadow background-none letter-spacing-2px font-size-16px">{{ character.name }}</div>
-        <div class="collapsible-body border-bottom-none all-characters-accordion-desc"><span>{{ character.description }}<br>{{ character.region_name }}<br>{{ character.house_name }}<br>{{ character.episodes }}<br>{{ character.deceased }}</span>
+        <div class="collapsible-body border-bottom-none all-characters-accordion-desc"><span>House Name: {{ character.house_name }}<br>Description: {{ character.description }}</span>
             <div class="edit-and-delete-character-button">
                 <a class="edit-and-delete-character-button" href="{{url_for('edit_character', character_id=character._id)}}" class="waves-effect waves-light btn-small">Edit Character Info</a>
             </div>

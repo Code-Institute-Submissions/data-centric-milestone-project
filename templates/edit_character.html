@@ -1,8 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 
+
+
+<!-----------------BACKGROUND IMAGE----------->        
+
 <div class="all-characters-page-bg padding-bottom-100px">
 
+
+
+<!-----------------PAGE TITLE----------->        
+
 <h1 class="margin-0 all-characters-page-title font-family-cinzel padding-bottom-100px">Edit a Character</h1>
+
+
+
+<!-----------------FORM FOR EDITING A CHARACTER----------->        
 
 
 <div class="container">
@@ -20,6 +32,11 @@
                 <label for="icon_telephone">Description</label>
             </div>
         </div>
+        
+        
+        
+<!-----------------FUNCTION FOR LOOPING OVER HOUSE NAMES FROM THE DATABASE-----------> 
+        
         <div class="row">
             <div class="input-field col s12">
                 <select id="house_name" name="house_name" class="icons caret">
@@ -81,6 +98,11 @@
                 </select>
             </div>
         </div>
+        
+        
+
+<!-----------------SUBMIT FORM ENTRIES BUTTON----------->        
+
         <div>
             <button class="submit-button font-family-raleway" type="submit" name="action">
                 Confirm Changes

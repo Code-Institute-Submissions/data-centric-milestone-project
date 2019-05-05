@@ -1,4 +1,4 @@
-/*-----------------------Google Fonts-------------------*/
+/*-----------------------GOOGLE FONTS-------------------*/
 
 .font-family-poppins {
     font-family: 'Poppins', sans-serif;
@@ -194,7 +194,7 @@
 
 
 
-/*---------------NORTH.HTML STYLES---------------*/
+/*---------------.HTML PAGE STYLES---------------*/
 
 .the_northHTML_title {
     color: white;
@@ -479,7 +479,7 @@
 
 
 
-/*--------------------------.HTML STYLES MEDIA---------------------*/
+/*--------------------------MEDIA QUERIES---------------------*/
 
 @media screen and (min-width: 300px) and (max-width: 445px) {
     .the_northHTML_title {

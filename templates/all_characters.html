@@ -1,8 +1,15 @@
+
+
+<!-----------------BACKGROUND IMAGE-----------> 
+
 <div class="all-characters-page-bg padding-bottom-100px">
 
 {% extends 'base.html' %} {% block content %}
 <h1 class="margin-0 all-characters-page-title font-family-cinzel">All Characters</h1>
 
+
+
+<!-----------------ADD CHARACTER AND HOME PAGE LINKS----------->        
 
 <div class="container">
     <div class="row add-character-home-page">
@@ -16,6 +23,11 @@
         </div>
     </div>
 </div>
+
+
+
+
+<!-----------------ITERATION OF CHARACTERS THAT HAVE BEEN ADDED TO THE DATABASE----------->        
 
 
 {% for character in character %}

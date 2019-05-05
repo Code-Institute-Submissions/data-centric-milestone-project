@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 
+<!-----------------BACKGROUND IMAGE-----------> 
+
 <div class="home-page-bg">
 
 
@@ -14,12 +16,18 @@
     </div>
 
 
+<!-----------------------LINK TO ALL CHARACTERS PAGE------------------->
+
+
 <div class="container">
     <div class="row characters-houses-link-centering">
         <div class="col 12"><a class="all-characters-link font-family-cinzel" href="{{ url_for('get_all_characters') }}">All Characters</a>
         </div>
     </div>
 </div>
+
+
+<!-----------------------ACCORDION CONTAINING ALL REGIONS, HOUSES WITHIN THOSE REGIONS AND CHARACTERS------------------->
 
 
 <div class="container">

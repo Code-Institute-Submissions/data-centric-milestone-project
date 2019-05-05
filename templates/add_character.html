@@ -1,12 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 
 
+<!-----------------BACKGROUND IMAGE-----------> 
+
 <div class="all-characters-page-bg">
     
     
     
+<!-----------------PAGE TITLE----------->        
+
+    
 <h1 class="margin-0 all-characters-page-title font-family-cinzel padding-bottom-55px">Add a Character</h1>
 
+
+
+
+<!-----------------FORM FOR ADDING A CHARACTER----------->        
 
 <div class="container max-width-60">
 <div class="row transparent-border margin-0">
@@ -23,6 +32,11 @@
                 <label for="icon_telephone"><span class="active">Description</label></span>
             </div>
         </div>
+        
+        
+<!-----------------FUNCTION FOR LOOPING OVER HOUSE NAMES FROM THE DATABASE----------->        
+
+        
         <div class="row">
             <div class="input-field col s12">
                 <select id="house_name" name="house_name" class="icons caret">
@@ -85,6 +99,11 @@
             </div>
         </div>
          
+
+
+<!-----------------SUBMIT FORM ENTRIES BUTTON----------->        
+         
+
         <button class="submit-button font-family-raleway" type="submit" name="action">
             Add Character
         </button>

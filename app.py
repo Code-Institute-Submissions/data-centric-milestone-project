@@ -117,18 +117,10 @@ Function for adding a character to the database, then returns user to get_all_ch
 """
 @app.route('/add_character')
 def add_character():
-    return render_template('add_character.html',
-                            the_north=mongo.db.region.find({'region_name':'The North'}).sort('name'),
-                            the_riverlands=mongo.db.region.find({'region_name':'The Riverlands'}).sort('name'),
-                            the_vale=mongo.db.region.find({'region_name':'The Vale'}).sort('name'),
-                            the_westerlands=mongo.db.region.find({'region_name':'The Westerlands'}).sort('name'),
-                            the_iron_islands=mongo.db.region.find({'region_name':'The Iron Islands'}).sort('name'),
-                            the_crownlands=mongo.db.region.find({'region_name':'The Crownlands'}).sort('name'),
-                            the_stormlands=mongo.db.region.find({'region_name':'The Stormlands'}).sort('name'),
-                            the_reach=mongo.db.region.find({'region_name':'The Reach'}).sort('name'),
-                            dorne=mongo.db.region.find({'region_name':'Dorne'}).sort('name'),
-                            character=mongo.db.character.find().sort('name'),)
-
+    houses = mongo.db.region.find()
+    all_houses = [house for house in houses]
+    return render_template('add_character.html', house=all_houses)
+                        
     
 @app.route('/insert_character', methods=["POST"])
 def insert_character():
@@ -144,16 +136,10 @@ Edits character info, then returns user to get_all_characters function page
 @app.route('/edit_character/<character_id>')
 def edit_character(character_id):
     character = mongo.db.character.find_one({"_id": ObjectId(character_id)})
-    return render_template('edit_character.html', character=character,
-                            the_north=mongo.db.region.find({'region_name':'The North'}).sort('name'),
-                            the_riverlands=mongo.db.region.find({'region_name':'The Riverlands'}).sort('name'),
-                            the_vale=mongo.db.region.find({'region_name':'The Vale'}).sort('name'),
-                            the_westerlands=mongo.db.region.find({'region_name':'The Westerlands'}).sort('name'),
-                            the_iron_islands=mongo.db.region.find({'region_name':'The Iron Islands'}).sort('name'),
-                            the_crownlands=mongo.db.region.find({'region_name':'The Crownlands'}).sort('name'),
-                            the_stormlands=mongo.db.region.find({'region_name':'The Stormlands'}).sort('name'),
-                            the_reach=mongo.db.region.find({'region_name':'The Reach'}).sort('name'),
-                            dorne=mongo.db.region.find({'region_name':'Dorne'}).sort('name'),)
+    houses = mongo.db.region.find()
+    all_houses = [house for house in houses]
+    return render_template('edit_character.html', character=character, house=all_houses)
+                    
                             
 @app.route('/update_character/<character_id>', methods=["POST"])
 def update_character(character_id):

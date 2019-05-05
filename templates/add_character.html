@@ -26,58 +26,58 @@
         <div class="row">
             <div class="input-field col s12">
                 <select id="house_name" name="house_name" class="icons caret">
-                  <option value="{{character.house_name}}" disabled selected>House Name</option>
-                  {% for region in the_north %}
-                  {% for house in region.north_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  <option value="" disabled selected>House Name</option>
+                  {% for house in house %}
+                  {% for house in house.north_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_riverlands %}
-                  {% for house in region.riverland_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.riverland_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_vale %}
-                  {% for house in region.the_vale_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.the_vale_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_westerlands %}
-                  {% for house in region.westerlands_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.westerlands_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in dorne %}
-                  {% for house in region.dorne_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.dorne_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_crownlands %}
-                  {% for house in region.crownlands_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.crownlands_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_iron_islands %}
-                  {% for house in region.iron_island_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.iron_island_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_reach %}
-                  {% for house in region.reach_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.reach_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   
-                  {% for region in the_stormlands %}
-                  {% for house in region.stormlands_house %}
-                      <option value="{{character.house_name}}" data-icon=""><div class="active">{{house}}</div></option>
+                  {% for house in house %}
+                  {% for house in house.stormlands_house %}
+                      <option value="{{house}}" data-icon=""><div class="active">{{house}}</div></option>
                   {% endfor %}
                   {% endfor %}
                   

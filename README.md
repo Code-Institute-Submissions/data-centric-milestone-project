@@ -8,19 +8,20 @@ This is my website used to display lists and categorised lists of chatracters fr
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 ### User Stories:
-'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remember all the names. I would like the list displayed alphabetically so it is easy to look through and digest' - users can find a list of all characters within the database on the app which displays all characters alphabetically.
+
+* 'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remember all the names. I would like the list displayed alphabetically so it is easy to look through and digest' - users can find a list of all characters within the database on the app which displays all characters alphabetically.
 
 
-'As a user I would like to be able to easily discern which character belongs to which house so that it is easier to understand who are allies and distant relatives' - The home page of the app provides the user with an accordion which breaks down houses within regions, and then characters within those houses.
+* 'As a user I would like to be able to easily discern which character belongs to which house so that it is easier to understand who are allies and distant relatives' - The home page of the app provides the user with an accordion which breaks down houses within regions, and then characters within those houses.
 
 
 * 'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remeber names to faces. I would like the list displayed alphabetically so it is easy to look through and digest'
 
 
 
-'As a user I would like a 'live' website that will allow myself and others to add character infomation to it as the show still has not finished. It would be great to add any new/old characters and any info that someone else adding character info may have missed for referencing purposes for myself' - users can perform CRUD commands on individual characters through the All Characters page. Once the user clicks on a character, they are given the option to edit and delete. Users can create a new characters by selecting the Add Character link at the top of the page.
+* 'As a user I would like a 'live' website that will allow myself and others to add character infomation to it as the show still has not finished. It would be great to add any new/old characters and any info that someone else adding character info may have missed for referencing purposes for myself' - users can perform CRUD commands on individual characters through the All Characters page. Once the user clicks on a character, they are given the option to edit and delete. Users can create a new characters by selecting the Add Character link at the top of the page.
 
-'As a Game of Thrones fan I would like to remember which house is in what region. I'd like the ability to visually see which house is where to understand which houses are allies and which house rules which region' - Users can visually find the houses within their retrospective regions through the accordion on the home page.
+* 'As a Game of Thrones fan I would like to remember which house is in what region. I'd like the ability to visually see which house is where to understand which houses are allies and which house rules which region' - Users can visually find the houses within their retrospective regions through the accordion on the home page.
 
 
 * Mockups are found within the folder named 'mockups'

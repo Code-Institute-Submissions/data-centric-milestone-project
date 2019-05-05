@@ -56,6 +56,15 @@ I would like the ability to add a 'Characters by Season' category. This would al
 5. MongoDB - used to store the data for accessing in a database. https://www.mongodb.com/
 6. Materialize - used for creating the accoridons and responsive design. https://materializecss.com/
 
+
+## Database Schema
+
+I used MongoDB to create the database and used the key value pairs in the collections from the database to link each collection together so that the values could be 'passed around' and manipulated. 
+
+To begin with I had considered creating collections for dead/alive characters, regions, houses, characters-by-season, number of episodes, as well as all current collections, and linking all of these together allowing a user to store their characters using these collections. The main focus however was ensuring that a character's name, description and house could be created, read, edited and deleted. This is achieved by the character, house and region collections and combining them together using Python. 
+
+MongoDB was favoured over a structured database such as MySQL as MongoDB is easier to visually play with when it comes to the kind of data that is being stored and can be easily digested when reading it on screen. If in future a Number of Episodes and/or Characters by Season feature is added, the inclusion of a structured database would be considered to help structure and manipulate the data and large lists would be included.
+
 ## Testing
 The first user story provides the user with their goal as the All Characters page displays a list of all characters in the database alphabetically. Each character also has a discription and house name associated to them. The character name, description and house name are all editable and can be inputted/created by user themselves. This will create and/or edit the character entry in the database and display them to screen in the All Characters page in alphabetical order.
 

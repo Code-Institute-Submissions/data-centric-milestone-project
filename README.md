@@ -5,14 +5,14 @@ This is my website used to display lists and categorised lists of chatracters fr
 ## UX
 
 ### User Stories:
-'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remember names to faces. I would like the list displayed alphabetically so it is easy to look through and digest' - users can find a list of all characters within the database on the app which displays all characters alphabetically.
+'As a Game of Thrones fan I would like to see a website that displays a list of all of the main and recurring characters as there are too many to remember by heart and I would like to remember all the names. I would like the list displayed alphabetically so it is easy to look through and digest' - users can find a list of all characters within the database on the app which displays all characters alphabetically.
 
 'As a user I would like to be able to easily discern which character belongs to which house so that it is easier to understand who are allies and distant relatives' - The home page of the app provides the user with an accordion which breaks down houses within regions, and then characters within those houses.
 
 
 'As a user I would like a 'live' website that will allow myself and others to add character infomation to it as the show still has not finished. It would be great to add any new/old characters and any info that someone else adding character info may have missed for referencing purposes for myself' - users can perform CRUD commands on individual characters through the All Characters page. Once the user clicks on a character, they are given the option to edit and delete. Users can create a new characters by selecting the Add Character link at the top of the page.
 
-'As a Game of Thrones fan I would like to remember which house is in what region. I'd like the ability to visually see which house is where to understand which houses are allies' - Users can visually find the houses within their retrospective regions through the accordion on the home page.
+'As a Game of Thrones fan I would like to remember which house is in what region. I'd like the ability to visually see which house is where to understand which houses are allies and which house rules which region' - Users can visually find the houses within their retrospective regions through the accordion on the home page.
 
 
 * Mockups are found within the folder named 'mockups'
@@ -48,22 +48,19 @@ I would like the ability to add a 'Characters by Season' category. This would al
 6. Materialize - used for creating the accoridons and responsive design. https://materializecss.com/
 
 ## Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+The first user story provides the user with their goal as the All Characters page displays a list of all characters in the database alphabetically. Each character also has a discription and house name associated to them. The character name, description and house name are all editable and can be inputted/created by user themselves. This will create and/or edit the character entry in the database and display them to screen in the All Characters page in alphabetical order.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+The second user story is achieved by using an accordion to categorise the characters into their retrospective regions and houses. This works when the user selects the Regions accordion header, this will drop down a body of region names with another body beneath titles 'houses'. Once the user clicks on this it will drop another body down with the regions' house names and each house name will drop another body displaying the character name. This filtering allows the user to find which characters belong to which houses. If this worked in reverse order, the lists would be far too long and far less user friendly and straightforward; the filtering would become messy.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+A user can perform CRUD commands on each existing and new character. The third user story is achieved by allowing the user to do this. The user is free to add a description and house name of their choice. This creates a lot more freedom for the user to manipulate the character entry; as all throughout the show characters' journeys often change. e.g the discovery of Jon Snow's real name - ultimately changing the House Name he belongs to. This makes the website 'live' as stated in the user story and provides them with the opportunity to add any missing/irrelevant data. This level of flexibility will allow the user to continue to achieve their goal.
 
-## Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+The fourth user story is achieved through the use of the accordion on the home page. The user can see which houses are within which regions. This will allow the user an easy method of finding which house belongs where as it categorises houses into regions; this allows the user to discover which houses are allies. This user story is also achieved as the region names are links to individual pages that the user can navigate to providing them with some infomation regarding that particular region. Within this the user can find which house rules which region with some extra content about that region and house.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+All links in the accordion are targeted using Jinja templating (url_for) and target the functions for directing the user to a region page selected. 
+
+To test the responsiveness of the site, the chrome dev tools were used to change the screen size by making the dev tool window wider and by toggling the device tool bar to diplays on the different device options.
+
 
 ## Deployment
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).

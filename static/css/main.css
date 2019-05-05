@@ -491,6 +491,9 @@
     .the_crownlands_title {
         font-size: 26px;
     }
+    .home-page-title, .all-characters-page-title{
+        font-size: 40px;
+    }
     .list {
         font-size: 18px;
     }

@@ -1,0 +1,14 @@
+Click==7.0
+Flask==1.0.2
+Flask-PyMongo==2.2.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Unidecode==0.04.21
+Werkzeug==0.14.1
+awesome-slugify==1.6.5
+dnspython==1.16.0
+itsdangerous==1.1.0
+pymongo==3.7.2
+regex==2019.03.12
+style==1.1.0
+update==0.0.1
